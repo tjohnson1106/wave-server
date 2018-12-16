@@ -42,7 +42,8 @@ defmodule Wave.Mixfile do
       {:absinthe, "~> 1.4"},
       {:absinthe_plug, "~> 1.4"},
       {:absinthe_ecto, ">= 0.0.0"},
-      {:plug_cowboy, "~> 1.0"}
+      {:plug_cowboy, "~> 1.0"},
+      {:faker, "~> 0.9", only: [:dev, :test]}
     ]
   end
 
