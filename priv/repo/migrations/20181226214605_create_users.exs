@@ -15,6 +15,6 @@ defmodule Wave.Repo.Migrations.CreateUsers do
 
     # unique -> users(table name) -> facebook_id
     create(unique_index(:users, [:email]))
-    create_unique_index(:users, [:facebook_id])
+    create(unique_index(:users, [:facebook_id]))
   end
 end
