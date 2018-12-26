@@ -9,11 +9,31 @@ defmodule Wave.Accounts do
   alias Wave.Accounts.User
 
   @doc """
+  search for user or create.
+
+  ## Examples
+
+      iex> get_user_or_create()
+      [:ok, %User{}, ...]
+
+  """
+
+  def get_user_or_create(attrs, search_params) do
+    case Repo.get_by(User, Map.to_list(search_params)) do
+      nil ->
+        create_user(attrs)
+
+      user ->
+        {:ok, user}
+    end
+  end
+
+  @doc """
   Returns the list of users.
 
   ## Examples
 
-      iex> list_users()
+      iex> get_user_or_create()
       [%User{}, ...]
 
   """
