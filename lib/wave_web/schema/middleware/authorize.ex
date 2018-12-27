@@ -2,7 +2,7 @@ defmodule WaveWeb.Schema.Middleware.Authorize do
   @behaviour Absinthe.Middleware
 
   # resolution -> returned context
-  def call(resolution) do
+  def call(resolution, _) do
     with %{current_user: current_user} <- resolution.context do
       resolution
     else
