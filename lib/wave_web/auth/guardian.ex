@@ -7,7 +7,7 @@ defmodule WaveWeb.Auth.Guardian do
     {:ok, sub}
   end
 
-  def resource_from_claim(claims) do
+  def resource_from_claims(claims) do
     id = claims["sub"]
     resource = Wave.Accounts.get_user!(id)
 

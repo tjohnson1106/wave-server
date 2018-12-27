@@ -3,7 +3,6 @@ defmodule WaveWeb.Router do
 
   pipeline :api do
     plug(:accepts, ["json"])
-    # context.ex
     plug(WaveWeb.Context)
   end
 
